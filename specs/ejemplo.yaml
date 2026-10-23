@@ -1,0 +1,31 @@
+# Especificación de un artículo (la "spec" del enfoque Spec-Driven Development).
+# Los agentes generan el artículo a partir de este fichero y se verifica contra él.
+
+titulo: "Agentes de IA basados en modelos de lenguaje para la generación de software"
+idioma: es
+tipo: revision                # revision | experimental | posicion
+extension_palabras: 3000
+
+objetivo: >
+  Revisar el estado del arte de los sistemas multiagente basados en LLMs
+  aplicados a la ingeniería del software y analizar sus limitaciones.
+
+preguntas_investigacion:
+  - "¿Qué arquitecturas multiagente se usan para generar software con LLMs?"
+  - "¿Cómo se verifica la calidad del código que generan?"
+  - "¿Qué limitaciones y riesgos presentan?"
+
+palabras_clave: [LLM, agentes, ingeniería del software, generación de código]
+
+secciones:                     # opcional: si se omite, el Planificador propone la estructura
+  - Introducción
+  - Trabajos relacionados
+  - Arquitecturas multiagente
+  - Verificación y calidad
+  - Discusión
+  - Conclusiones
+
+criterios_aceptacion:
+  - "Cada sección responde al menos a una pregunta de investigación"
+  - "Todas las afirmaciones relevantes van acompañadas de una cita"
+  - "Las referencias existen y son verificables"

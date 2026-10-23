@@ -1,0 +1,24 @@
+# Python
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Resultados generados por los agentes
+outputs/
+outputs_claude/
+
+# LaTeX (ficheros auxiliares de compilación)
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Claves de API (nunca al repositorio)
+.env

@@ -1,0 +1,23 @@
+# Configuración para probar con Claude en lugar de Ollama, usando la suscripción Pro de
+# Claude Code (sin API key). Requiere tener Claude Code instalado y con la sesión iniciada.
+#
+# Uso:  .\.venv\Scripts\python.exe -m articulos_ia --config config_claude.yaml generar specs/ejemplo.yaml --nuevo
+#
+# Cada llamada se descuenta de los límites de uso de la suscripción (se renuevan cada 5 horas).
+# Una ejecución completa hace decenas de llamadas.
+
+llm:
+  provider: claude_code
+  model: sonnet             # sonnet | opus | haiku (opus consume más cuota)
+
+# Alternativa con API key (de pago por uso):
+# llm:
+#   provider: anthropic
+#   model: claude-opus-5-5
+#   effort: low
+
+max_rondas_revision: 2
+max_pasos_orquestador: 40
+
+# Carpeta distinta a la de Ollama, para poder comparar los resultados
+output_dir: outputs_claude

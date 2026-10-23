@@ -1,0 +1,43 @@
+# Configuración del modelo de lenguaje.
+# Para cambiar de modelo basta con editar este fichero, sin tocar el código.
+
+llm:
+  provider: ollama          # durante el desarrollo: ollama. Más adelante: anthropic, openai...
+  model: qwen3.5:4b         # qwen3:8b cuando quieras ver más calidad
+  host: http://localhost:11434
+  num_ctx: 8192             # usar el MISMO valor en todos los agentes: si cambia, Ollama recarga
+                            # el modelo y en 6 GB de VRAM no caben las dos copias a la vez
+  temperature: 0.4
+
+# Para usar Claude en lugar de Ollama, sustituye el bloque `llm` por este
+# (requiere `pip install -e ".[anthropic]"` y la variable de entorno ANTHROPIC_API_KEY):
+#
+# llm:
+#   provider: anthropic
+#   model: claude-opus-5-5
+#   effort: low             # low | medium | high: más esfuerzo = mejor resultado y más caro
+#
+# Con Claude se ignoran host, num_ctx, temperature y think.
+
+# Ajustes por agente (sobrescriben los de arriba)
+agents:
+  orquestador:
+    think: false
+  investigador:
+    think: false
+  planificador:
+    think: false            # el modo "thinking" es lento; activarlo solo si mejora el resultado
+  redactor:
+    think: false
+  revisor_formato:
+    think: false
+  revisor_contexto:
+    think: false
+  revisor_calidad:
+    think: false
+
+max_rondas_revision: 2      # correcciones máximas por sección antes de darla por buena
+                            # (orden `revisar`; el Orquestador tiene su propio límite: 3)
+max_pasos_orquestador: 40   # pasos máximos del agente Orquestador (orden `generar`)
+
+output_dir: outputs
