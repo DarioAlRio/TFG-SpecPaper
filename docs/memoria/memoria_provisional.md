@@ -585,6 +585,7 @@ Observaciones:
 | 23/10/2026 | Primera ejecución del Orquestador: 7 decisiones válidas; Ollama se cae en el paso 8; se relanza para reanudar desde el estado guardado (ver 7.4) |
 | 23/10/2026 | `config_claude.yaml`: configuración aparte para probar con Claude (`--config`), con resultados en `outputs_claude/` para comparar con Ollama |
 | 23/10/2026 | Tercer proveedor de LLM, `claude_code`: llama a Claude Code en modo no interactivo (`claude -p`, salida JSON con `--json-schema`, sin herramientas) con la sesión de la suscripción Pro, sin API key. 41/41 tests. Primera ejecución completa con Claude Sonnet lanzada |
+| 23/10/2026 | Código subido a GitHub: repositorio público [DarioAlRio/TFG-SpecPaper](https://github.com/DarioAlRio/TFG-SpecPaper) (nombre del proyecto: **SpecPaper**). Se excluyen `.venv` y los resultados generados (`outputs/`, `outputs_claude/`) |
 
 ## 9. Pendiente / ideas para la memoria
 
